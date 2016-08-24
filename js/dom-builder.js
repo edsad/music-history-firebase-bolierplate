@@ -28,8 +28,10 @@ function makeSongList(songList) {
     $(".song-list").append($songListItem.append($songListData).append($songListDelete).append($songListEdit));
   }
 }
-
+// this next section is his half-ass way of creating a template without using handlebars.
+ // it's UGLY!
 function songForm(song, songId) {
+  console.log("songForm data", song, songId);
   return new Promise(function (resolve, reject) {
     let songItem = {
       title: song ? song.title : "",
@@ -51,7 +53,9 @@ function songForm(song, songId) {
   });
 }
 
+// browserify export methods
 module.exports = {
   makeSongList,
   songForm
+
 };
